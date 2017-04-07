@@ -62,6 +62,7 @@ func userList(w http.ResponseWriter, r *http.Request) {
 
 	for num_responded < len(files) {
 		user := <-msgchan
+		num_responded += 1
 
 		users = append(users, user)
 	}
