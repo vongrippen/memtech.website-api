@@ -32,8 +32,8 @@ func main() {
 	log.Println("Listening on port ", config.Port)
 
 	r := mux.NewRouter()
-	r.HandleFunc("/users.json", userList)
-	http.Handle("/api", r)
+	r.HandleFunc("/api/users.json", userList)
+	http.Handle("/", r)
 
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%s", config.Host, config.Port), nil))
 }
